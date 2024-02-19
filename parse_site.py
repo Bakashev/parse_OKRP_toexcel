@@ -59,13 +59,6 @@ for index in range(len(list_rezult)-1):
             count = 1
             try:
                   while not list_rezult[index + count][0].isalpha():
-                        # if len(list_rezult[index+count][0]) == 2:
-                        #         print(1)
-                        #
-                        #         print(len(list_rezult[index + count]))
-                        #         list_rezult[index + count].append(alfa[0])
-
-
 
                         if len(list_rezult[index][0]) + 1 == len(list_rezult[index+count][0]) and \
                            len(list_rezult[index+count]) == 2 and list_rezult[index][0] in list_rezult[index+count][0]:
@@ -87,18 +80,11 @@ for index in range(len(list_rezult)-1):
                   print('Конец списка')
 
 
-
-
-#print(list_rezult)
-#Выгрузка из словоря
-# data_to_excel_OKRB = pandas.DataFrame.from_dict(dict_OKRB, orient='index')
-# data_to_excel_OKRB.to_excel('testOKRB.xlsx')
 dict_list_rezult = {}
 #выгрузка из списка
 for elem in list_rezult:
       dict_list_rezult[elem[0]] = elem[1:]
 print('печать')
-#print(dict_list_rezult)
 data_to_excel_OKRB = pandas.DataFrame.from_dict(dict_list_rezult, orient='index')
 data_to_excel_OKRB.to_excel('testOKRB.xlsx')
 print('конец')
